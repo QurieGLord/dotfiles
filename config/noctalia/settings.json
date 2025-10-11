@@ -1,0 +1,232 @@
+{
+    "appLauncher": {
+        "backgroundOpacity": 1,
+        "enableClipboardHistory": false,
+        "pinnedExecs": [
+        ],
+        "position": "center",
+        "sortByMostUsed": true,
+        "terminalCommand": "xterm -e",
+        "useApp2Unit": false
+    },
+    "audio": {
+        "cavaFrameRate": 60,
+        "mprisBlacklist": [
+        ],
+        "preferredPlayer": "",
+        "visualizerType": "linear",
+        "volumeOverdrive": false,
+        "volumeStep": 5
+    },
+    "bar": {
+        "backgroundOpacity": 0,
+        "density": "default",
+        "floating": true,
+        "marginHorizontal": 0.25,
+        "marginVertical": 0.25,
+        "monitors": [
+        ],
+        "position": "top",
+        "showCapsule": true,
+        "widgets": {
+            "center": [
+                {
+                    "hideUnoccupied": false,
+                    "id": "Workspace",
+                    "labelMode": "index"
+                }
+            ],
+            "left": [
+                {
+                    "id": "SystemMonitor",
+                    "showCpuTemp": true,
+                    "showCpuUsage": true,
+                    "showDiskUsage": false,
+                    "showMemoryAsPercent": false,
+                    "showMemoryUsage": true,
+                    "showNetworkStats": false
+                },
+                {
+                    "autoHide": false,
+                    "id": "ActiveWindow",
+                    "scrollingMode": "hover",
+                    "showIcon": true,
+                    "width": 145
+                },
+                {
+                    "autoHide": false,
+                    "id": "MediaMini",
+                    "scrollingMode": "hover",
+                    "showAlbumArt": false,
+                    "showVisualizer": false,
+                    "visualizerType": "linear"
+                }
+            ],
+            "right": [
+                {
+                    "id": "ScreenRecorder"
+                },
+                {
+                    "id": "Tray"
+                },
+                {
+                    "hideWhenZero": true,
+                    "id": "NotificationHistory",
+                    "showUnreadBadge": true
+                },
+                {
+                    "displayMode": "onhover",
+                    "id": "Volume"
+                },
+                {
+                    "customFont": "",
+                    "formatHorizontal": "HH:mm ddd, MMM dd",
+                    "formatVertical": "HH mm - dd MM",
+                    "id": "Clock",
+                    "useCustomFont": false,
+                    "usePrimaryColor": true
+                },
+                {
+                    "customIconPath": "",
+                    "icon": "noctalia",
+                    "id": "ControlCenter",
+                    "useDistroLogo": false
+                }
+            ]
+        }
+    },
+    "brightness": {
+        "brightnessStep": 5
+    },
+    "colorSchemes": {
+        "darkMode": false,
+        "generateTemplatesForPredefined": true,
+        "matugenSchemeType": "scheme-rainbow",
+        "predefinedScheme": "Monochrome",
+        "useWallpaperColors": true
+    },
+    "controlCenter": {
+        "position": "close_to_bar_button"
+    },
+    "dock": {
+        "backgroundOpacity": 1,
+        "displayMode": "always_visible",
+        "floatingRatio": 1,
+        "monitors": [
+        ],
+        "onlySameOutput": true,
+        "pinnedApps": [
+        ]
+    },
+    "general": {
+        "animationDisabled": false,
+        "animationSpeed": 1,
+        "avatarImage": "/home/qurie/.face",
+        "dimDesktop": false,
+        "forceBlackScreenCorners": false,
+        "radiusRatio": 0.8,
+        "screenRadiusRatio": 1,
+        "showScreenCorners": false
+    },
+    "hooks": {
+        "darkModeChange": "",
+        "enabled": true,
+        "wallpaperChange": "/home/qurie/.local/bin/update_micro_theme.sh; /home/qurie/.local/bin/update_qt_colorscheme.sh; /home/qurie/.local/bin/apply_gtk_css_rules.sh"
+    },
+    "location": {
+        "name": "Moscow",
+        "showWeekNumberInCalendar": false,
+        "use12hourFormat": true,
+        "useFahrenheit": false
+    },
+    "network": {
+        "wifiEnabled": true
+    },
+    "nightLight": {
+        "autoSchedule": true,
+        "dayTemp": "6500",
+        "enabled": false,
+        "forced": false,
+        "manualSunrise": "06:30",
+        "manualSunset": "18:30",
+        "nightTemp": "4000"
+    },
+    "notifications": {
+        "alwaysOnTop": false,
+        "criticalUrgencyDuration": 15,
+        "doNotDisturb": false,
+        "lastSeenTs": 1760139825000,
+        "location": "top_right",
+        "lowUrgencyDuration": 3,
+        "monitors": [
+        ],
+        "normalUrgencyDuration": 8,
+        "respectExpireTimeout": false
+    },
+    "osd": {
+        "autoHideMs": 2000,
+        "enabled": true,
+        "location": "top_right",
+        "monitors": [
+        ]
+    },
+    "screenRecorder": {
+        "audioCodec": "opus",
+        "audioSource": "default_output",
+        "colorRange": "limited",
+        "directory": "/home/qurie/Videos",
+        "frameRate": 60,
+        "quality": "very_high",
+        "showCursor": true,
+        "videoCodec": "h264",
+        "videoSource": "portal"
+    },
+    "settingsVersion": 15,
+    "templates": {
+        "enableUserTemplates": false,
+        "foot": false,
+        "fuzzel": false,
+        "ghostty": false,
+        "gtk": true,
+        "kitty": true,
+        "pywalfox": false,
+        "qt": true,
+        "vesktop": false
+    },
+    "ui": {
+        "fontDefault": "Roboto",
+        "fontDefaultScale": 1,
+        "fontFixed": "DejaVu Sans Mono",
+        "fontFixedScale": 1,
+        "idleInhibitorEnabled": false,
+        "monitorsScaling": [
+        ],
+        "tooltipsEnabled": true
+    },
+    "wallpaper": {
+        "defaultWallpaper": "/etc/xdg/quickshell/noctalia-shell/Assets/Wallpaper/noctalia.png",
+        "directory": "/home/qurie/Изображения/Обои",
+        "enableMultiMonitorDirectories": false,
+        "enabled": true,
+        "fillColor": "#000000",
+        "fillMode": "crop",
+        "monitors": [
+            {
+                "directory": "/home/qurie/Изображения/Обои",
+                "name": "DVI-D-1",
+                "wallpaper": "/home/qurie/Изображения/Обои/wallhaven-ymlw3k.png"
+            },
+            {
+                "directory": "/home/qurie/Изображения/Обои",
+                "name": "HDMI-A-1",
+                "wallpaper": "/home/qurie/Изображения/Обои/wallhaven-ymlw3k.png"
+            }
+        ],
+        "randomEnabled": false,
+        "randomIntervalSec": 300,
+        "setWallpaperOnAllMonitors": true,
+        "transitionDuration": 1500,
+        "transitionEdgeSmoothness": 0.05,
+        "transitionType": "random"
+    }
+}
