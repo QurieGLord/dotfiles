@@ -1,0 +1,92 @@
+#!/bin/bash
+
+# --- CONFIGURATION ---
+
+C_ACCENT=$'\033[1;34m'
+C_WHITE=$'\033[1;37m'
+C_NC=$'\033[0m'
+
+# Using a different set of Nerd Font icons to try and avoid fallback issues.
+ICON_OS=$'\uf17c'      # Linux Penguin
+ICON_KERNEL=$'\uf2db'  # Microchip
+ICON_WM=$'\uf2d0'      # Desktop
+ICON_TERM=$'\uf120'    # Terminal
+ICON_CPU=$'\uf233'      # CPU
+ICON_GPU=$'\uf26c'      # Display
+ICON_MEM=$'\uf0a0'      # Memory / HDD
+
+# --- SCRIPT LOGIC ---
+
+get_wallpaper() {
+    local wallpaper=$(jq -r '.wallpaper.monitors[0].wallpaper' "/home/qurie/.config/noctalia/settings.json" 2>/dev/null)
+    if [ -z "$wallpaper" ] || [ ! -f "$wallpaper" ]; then
+        echo ""
+    else
+        echo "$wallpaper"
+    fi
+}
+
+draw_fetch() {
+    term_width=$(tput cols)
+
+    # --- Image Display ---
+    local image_path=$(get_wallpaper)
+    if [ -n "$image_path" ]; then
+        local image_cols=30
+        local actual_rows=9
+        local horizontal_offset=$(( (term_width - image_cols) / 2 ))
+        horizontal_offset=$((horizontal_offset > 0 ? horizontal_offset : 0))
+        kitten icat --place "${image_cols}x${actual_rows}@${horizontal_offset}x2" "$image_path" 2>/dev/null
+        tput cup $((2 + actual_rows)) 0
+        echo
+    else
+        clear
+        echo
+        echo
+    fi
+
+    # --- Info Display ---
+    local ff_output=$(TERM=xterm-kitty SHELL=/usr/bin/fish fastfetch --pipe --logo none 2>/dev/null)
+
+    # Helper function to format and print a centered line
+    print_centered_line() {
+        local label="$1"
+        local icon="$2"
+        local grep_pattern="$3"
+        local value=$(grep "$grep_pattern" <<< "$ff_output" | sed -E "s/$label: //")
+
+        if [ -n "$value" ]; then
+            # Note the extra space after the icon, which can sometimes help rendering.
+            local line_to_print="${C_ACCENT}${icon}  ${label}${C_NC}: ${C_WHITE}${value}${C_NC}"
+            local clean_line_for_len="${icon}  ${label}: ${value}"
+            local line_len=$(echo -n "$clean_line_for_len" | awk '{print length}')
+            local padding=$(( (term_width - line_len) / 2 ))
+            padding=$((padding > 0 ? padding : 0))
+            printf "%${padding}s%b\n" "" "$line_to_print"
+        fi
+    }
+
+    # Call the function for each piece of info
+    print_centered_line "OS" "$ICON_OS" "^OS:"
+    print_centered_line "Kernel" "$ICON_KERNEL" "^Kernel:"
+    print_centered_line "WM" "$ICON_WM" "^WM:"
+    
+    # Manually print the Terminal line
+    {
+        local label="Terminal"
+        local icon="$ICON_TERM"
+        local value="kitty"
+        local line_to_print="${C_ACCENT}${icon}  ${label}${C_NC}: ${C_WHITE}${value}${C_NC}"
+        local clean_line_for_len="${icon}  ${label}: ${value}"
+        local line_len=$(echo -n "$clean_line_for_len" | awk '{print length}')
+        local padding=$(( (term_width - line_len) / 2 ))
+        padding=$((padding > 0 ? padding : 0))
+        printf "%${padding}s%b\n" "" "$line_to_print"
+    }
+
+    print_centered_line "CPU" "$ICON_CPU" "^CPU:"
+    print_centered_line "GPU" "$ICON_GPU" "^GPU:"
+    print_centered_line "Memory" "$ICON_MEM" "^Memory:"
+}
+
+draw_fetch

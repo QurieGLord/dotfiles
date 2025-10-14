@@ -67,6 +67,8 @@
                     "id": "ScreenRecorder"
                 },
                 {
+                    "blacklist": [
+                    ],
                     "id": "Tray"
                 },
                 {
@@ -102,11 +104,34 @@
         "darkMode": false,
         "generateTemplatesForPredefined": true,
         "matugenSchemeType": "scheme-rainbow",
-        "predefinedScheme": "Monochrome",
-        "useWallpaperColors": true
+        "predefinedScheme": "Solarized",
+        "useWallpaperColors": false
     },
     "controlCenter": {
-        "position": "close_to_bar_button"
+        "position": "close_to_bar_button",
+        "quickSettingsStyle": "compact",
+        "widgets": {
+            "quickSettings": [
+                {
+                    "id": "WiFi"
+                },
+                {
+                    "id": "Bluetooth"
+                },
+                {
+                    "id": "Notifications"
+                },
+                {
+                    "id": "ScreenRecorder"
+                },
+                {
+                    "id": "PowerProfile"
+                },
+                {
+                    "id": "WallpaperSelector"
+                }
+            ]
+        }
     },
     "dock": {
         "backgroundOpacity": 1,
@@ -131,7 +156,7 @@
     "hooks": {
         "darkModeChange": "",
         "enabled": true,
-        "wallpaperChange": "/home/qurie/.local/bin/update_micro_theme.sh; /home/qurie/.local/bin/update_qt_colorscheme.sh; /home/qurie/.local/bin/apply_gtk_css_rules.sh"
+        "wallpaperChange": "/home/qurie/.local/bin/update_micro_theme.sh; /home/qurie/.local/bin/update_qt_colorscheme.sh"
     },
     "location": {
         "name": "Moscow",
@@ -155,7 +180,7 @@
         "alwaysOnTop": false,
         "criticalUrgencyDuration": 15,
         "doNotDisturb": false,
-        "lastSeenTs": 1760139825000,
+        "lastSeenTs": 1760412487000,
         "location": "top_right",
         "lowUrgencyDuration": 3,
         "monitors": [
@@ -164,6 +189,7 @@
         "respectExpireTimeout": false
     },
     "osd": {
+        "alwaysOnTop": false,
         "autoHideMs": 2000,
         "enabled": true,
         "location": "top_right",
@@ -183,15 +209,22 @@
     },
     "settingsVersion": 15,
     "templates": {
+        "discord": false,
+        "discord_armcord": false,
+        "discord_dorion": false,
+        "discord_equibop": false,
+        "discord_lightcord": false,
+        "discord_vesktop": false,
+        "discord_webcord": false,
         "enableUserTemplates": false,
         "foot": false,
         "fuzzel": false,
         "ghostty": false,
         "gtk": true,
+        "kcolorscheme": false,
         "kitty": true,
-        "pywalfox": false,
-        "qt": true,
-        "vesktop": false
+        "pywalfox": true,
+        "qt": true
     },
     "ui": {
         "fontDefault": "Roboto",
