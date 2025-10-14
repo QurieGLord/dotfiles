@@ -2,7 +2,7 @@
 
 # 🌙 Qurie's Noctalia-Niri Rice
 
-**Полностью кастомизированный Wayland desktop на основе Noctalia Shell + Niri для CachyOS**
+**Fully customized Wayland desktop based on Noctalia Shell + Niri for CachyOS**
 
 ![Screenshot 1](qn1.png)
 
@@ -15,46 +15,46 @@
 
 ---
 
-## ✨ Особенности
+## ✨ Features
 
 <table>
 <tr>
 <td width="50%">
 
-### 🎨 Темизация
-- **Автоматическая генерация цветовых схем** из обоев через matugen
-- **Универсальная поддержка** Qt5, Qt6, GTK3, GTK4, Firefox/Zen (Pywalfox), Kitty
-- **10+ предустановленных схем**: Kanagawa, Catppuccin, Gruvbox, Solarized, Monochrome и др.
-- **Мгновенное применение** при смене обоев или схемы
+### 🎨 Theming
+- **Automatic color scheme generation** from wallpapers via matugen
+- **Universal support** for Qt5, Qt6, GTK3, GTK4, Firefox/Zen (Pywalfox), Kitty
+- **10+ preset schemes**: Kanagawa, Catppuccin, Gruvbox, Solarized, Monochrome, and more
+- **Instant application** when changing wallpapers or schemes
 
 </td>
 <td width="50%">
 
-### 🚀 Производительность
-- **Niri compositor** — современный тайловый Wayland менеджер окон
-- **GPU Screen Recorder** — встроенная запись экрана с аппаратным ускорением
-- **NVIDIA Wayland оптимизации** — полная поддержка NVIDIA GPU на Wayland
-- **Быстрые анимации** и плавная работа на любом железе
+### 🚀 Performance
+- **Niri compositor** — modern tiling Wayland window manager
+- **GPU Screen Recorder** — built-in hardware-accelerated screen recording
+- **NVIDIA Wayland optimizations** — full NVIDIA GPU support on Wayland
+- **Fast animations** and smooth performance on any hardware
 
 </td>
 </tr>
 <tr>
 <td width="50%">
 
-### 🛠️ Исправления и улучшения
-- ✅ **Исправлена Qt интеграция** — добавлен `custom_palette=true` в qt5ct/qt6ct
-- ✅ **Исправлена GTK3 темизация** — автогенерация кастомной темы с хардкод-цветами
-- ✅ **Добавлен недостающий цвет `scrim`** для predefined схем
-- ✅ **Универсальный GTK шаблон** — работает одновременно для GTK3 и GTK4 без артефактов
+### 🛠️ Fixes and Improvements
+- ✅ **Fixed Qt integration** — added `custom_palette=true` to qt5ct/qt6ct
+- ✅ **Fixed GTK3 theming** — auto-generation of custom theme with hardcoded colors
+- ✅ **Added missing `scrim` color** for predefined schemes
+- ✅ **Universal GTK template** — works for both GTK3 and GTK4 without artifacts
 
 </td>
 <td width="50%">
 
 ### 🎯 UI/UX
-- **Виджетная система баров** — полная кастомизация верхнего панели
-- **Dock приложений** — красивый док с автоскрытием
-- **Продвинутый лаунчер** — fuzzy search, история запусков, закреплённые приложения
-- **Control Center** — быстрые настройки Wi-Fi, Bluetooth, Яркость, Power Profile
+- **Widget-based bar system** — fully customizable top panel
+- **Application dock** — beautiful dock with auto-hide
+- **Advanced launcher** — fuzzy search, launch history, pinned apps
+- **Control Center** — quick settings for Wi-Fi, Bluetooth, Brightness, Power Profile
 
 </td>
 </tr>
@@ -62,250 +62,250 @@
 
 ---
 
-## 🖼️ Скриншоты
+## 🖼️ Screenshots
 
 <details>
-<summary><b>Нажмите, чтобы посмотреть скриншоты</b></summary>
+<summary><b>Click to view screenshots</b></summary>
 
 ![Screenshot 1](qn1.png)
-*Основной рабочий стол с Noctalia Bar и активными окнами*
+*Main desktop with Noctalia Bar and active windows*
 
 ![Screenshot 2](qn2.png)
-*Лаунчер приложений с fuzzy search*
+*Application launcher with fuzzy search*
 
 ![Screenshot 3](qn3.png)
-*Control Center с быстрыми настройками*
+*Control Center with quick settings*
 
 </details>
 
 ---
 
-## 🚀 Быстрая установка
+## 🚀 Quick Installation
 
 ```bash
-# Клонируем репозиторий
+# Clone the repository
 git clone https://github.com/QurieGLord/Quries-Noctalia-Niri.git ~/dotfiles
 cd ~/dotfiles
 
-# Даём права на выполнение
+# Make installer executable
 chmod +x install.sh
 
-# Запускаем установщик
+# Run the installer
 ./install.sh
 ```
 
-Установщик поддерживает **3 режима**:
-1. **Полная установка** — установка всех модулей (база + NVIDIA + Qt + GTK)
-2. **Выборочная установка** — выбор отдельных модулей
-3. **Обновление конфигов** — обновление только конфигов без переустановки пакетов
+The installer supports **3 modes**:
+1. **Full installation** — install all modules (base + NVIDIA + Qt + GTK)
+2. **Selective installation** — choose individual modules
+3. **Config update only** — update configs without reinstalling packages
 
 ---
 
-## 📦 Модули установки
+## 📦 Installation Modules
 
 ### 🔹 Base Module
-Базовая установка Noctalia Shell + Niri + зависимости:
+Base installation of Noctalia Shell + Niri + dependencies:
 - Noctalia Shell (AUR), Niri compositor
 - Kitty terminal, Nautilus file manager
 - Brightnessctl, ddcutil, gpu-screen-recorder
 - Matugen-bin, cliphist, wlsunset
-- Иконочные темы: Tela-nord-dark, Papirus-Dark
-- Шрифты: Roboto, Inter, JetBrains Mono Nerd Font, DejaVu Sans Mono
+- Icon themes: Tela-nord-dark, Papirus-Dark
+- Fonts: Roboto, Inter, JetBrains Mono Nerd Font, DejaVu Sans Mono
 
-**Включает применение патчей**:
-- `AppThemeService.qml` — исправленный сервис тем с GTK3 генерацией
-- `gtk.css` — универсальный шаблон с CSS селекторами для GTK3/GTK4
+**Includes applying patches**:
+- `AppThemeService.qml` — fixed theme service with GTK3 generation
+- `gtk.css` — universal template with CSS selectors for GTK3/GTK4
 
 ### 🔹 NVIDIA Module
-NVIDIA Wayland оптимизации:
-- Драйвера: nvidia-dkms, nvidia-utils, nvidia-settings, libva-nvidia-driver
-- Переменные окружения: `GBM_BACKEND=nvidia-drm`, `__GLX_VENDOR_LIBRARY_NAME=nvidia`
-- Модули ядра: `nvidia-drm modeset=1`, `NVreg_PreserveVideoMemoryAllocations=1`
-- Автоматическое обновление initramfs
+NVIDIA Wayland optimizations:
+- Drivers: nvidia-dkms, nvidia-utils, nvidia-settings, libva-nvidia-driver
+- Environment variables: `GBM_BACKEND=nvidia-drm`, `__GLX_VENDOR_LIBRARY_NAME=nvidia`
+- Kernel modules: `nvidia-drm modeset=1`, `NVreg_PreserveVideoMemoryAllocations=1`
+- Automatic initramfs update
 
 ### 🔹 Qt Integration Module
-Qt5/Qt6 установка и настройка:
-- Пакеты: qt5-base, qt6-base, qt5ct, qt6ct
-- **Критичный фикс**: `custom_palette=true` в обоих конфигах
-- Настройка переменных окружения: `QT_QPA_PLATFORMTHEME=qt6ct`
-- Верификация конфигов
+Qt5/Qt6 installation and configuration:
+- Packages: qt5-base, qt6-base, qt5ct, qt6ct
+- **Critical fix**: `custom_palette=true` in both configs
+- Environment variables setup: `QT_QPA_PLATFORMTHEME=qt6ct`
+- Config verification
 
 ### 🔹 GTK Integration Module
-GTK3/GTK4 установка:
-- Пакеты: gtk3, gtk4, libadwaita
-- Тестовые приложения: qalculate-gtk, gnome-calculator
-- Копирование конфигов, создание кастомной GTK3 темы Noctalia
-- Настройка gsettings: gtk-theme, icon-theme, color-scheme
-- Верификация
+GTK3/GTK4 installation:
+- Packages: gtk3, gtk4, libadwaita
+- Test applications: qalculate-gtk, gnome-calculator
+- Config copying, creating custom Noctalia GTK3 theme
+- Gsettings configuration: gtk-theme, icon-theme, color-scheme
+- Verification
 
 ---
 
-## 🛠️ Технические детали
+## 🛠️ Technical Details
 
-### Исправления в Noctalia Shell
+### Fixes in Noctalia Shell
 
 #### 1. AppThemeService.qml
-**Местоположение**: `patches/noctalia-shell/AppThemeService.qml`
+**Location**: `patches/noctalia-shell/AppThemeService.qml`
 
-**Изменения**:
-- **Строки 200-201**: Добавлен недостающий цвет `scrim = "#000000"` (критично для predefined схем)
-- **Строка 234**: Добавлен ключ `"scrim": c(scrim)` в объект палитры
-- **Строки 255-289**: Новая функция `generateGtk3Theme()` — автогенерирует кастомную GTK3 тему с хардкод-цветами (без CSS переменных, т.к. GTK3 их не понимает)
+**Changes**:
+- **Lines 200-201**: Added missing `scrim = "#000000"` color (critical for predefined schemes)
+- **Line 234**: Added `"scrim": c(scrim)` key to palette object
+- **Lines 255-289**: New `generateGtk3Theme()` function — auto-generates custom GTK3 theme with hardcoded colors (without CSS variables, as GTK3 doesn't understand them)
 
-**Эффект**: Теперь при смене цветовой схемы автоматически создаётся `~/.themes/Noctalia/gtk-3.0/gtk.css` с прямыми цветами для всех виджетов (window, sidebar, headerbar, buttons, entries, lists, menus, notebooks, tabs, frames, scrollbars, toolbars, switches, checkboxes, progress bars, dialogs, labels).
+**Effect**: Now when changing color scheme, `~/.themes/Noctalia/gtk-3.0/gtk.css` is automatically created with direct colors for all widgets (window, sidebar, headerbar, buttons, entries, lists, menus, notebooks, tabs, frames, scrollbars, toolbars, switches, checkboxes, progress bars, dialogs, labels).
 
 #### 2. Assets/MatugenTemplates/gtk.css
-**Изменение**: Расширен шаблон GTK с добавлением ~30 типов CSS селекторов для GTK3 виджетов.
+**Change**: Extended GTK template with ~30 types of CSS selectors for GTK3 widgets.
 
-**Критично**: Стили для `popover, popover.background` **НЕ добавлены** — они ломают backdrop рендеринг в GTK4!
+**Critical**: Styles for `popover, popover.background` are **NOT added** — they break backdrop rendering in GTK4!
 
-**Размер**: 339 строк (CSS переменные для GTK4 + прямые селекторы для GTK3)
+**Size**: 339 lines (CSS variables for GTK4 + direct selectors for GTK3)
 
-**Эффект**: Один шаблон работает одновременно для GTK3 и GTK4 без артефактов и белых квадратов за контекстными меню.
+**Effect**: One template works for both GTK3 and GTK4 without artifacts and white squares behind context menus.
 
-#### 3. Qt5ct/Qt6ct конфигурация
-**Изменение**: Установлен `custom_palette=true` в `qt5ct.conf` и `qt6ct.conf`.
+#### 3. Qt5ct/Qt6ct configuration
+**Change**: Set `custom_palette=true` in `qt5ct.conf` and `qt6ct.conf`.
 
-**Корневая причина проблемы**: По умолчанию `custom_palette=false`, из-за чего Qt приложения игнорировали `color_scheme_path` и не применяли цвета из `~/.config/qt{5,6}ct/colors/noctalia.conf`.
+**Root cause of the problem**: By default `custom_palette=false`, which made Qt apps ignore `color_scheme_path` and not apply colors from `~/.config/qt{5,6}ct/colors/noctalia.conf`.
 
-**Эффект**: Qt5/Qt6 приложения теперь корректно применяют цвета из Noctalia при запуске.
+**Effect**: Qt5/Qt6 apps now correctly apply colors from Noctalia on launch.
 
 ---
 
-### Поддерживаемые приложения
+### Supported Applications
 
-| Тип | Приложения | Механизм темизации |
+| Type | Applications | Theming Mechanism |
 |-----|-----------|-------------------|
 | **Qt6** | Noctalia Shell, qt6ct | `~/.config/qt6ct/colors/noctalia.conf` + `custom_palette=true` |
 | **Qt5** | Telegram Desktop, qt5ct | `~/.config/qt5ct/colors/noctalia.conf` + `custom_palette=true` |
-| **GTK4** | Nautilus, Calculator, pwvucontrol | Material Design переменные + `org.gnome.desktop.interface color-scheme` через xdg-desktop-portal-gnome |
-| **GTK3** | Lutris, qalculate-gtk | Кастомная тема `~/.themes/Noctalia/gtk-3.0/gtk.css` с хардкод-цветами |
-| **Firefox/Zen** | Zen Browser, Firefox | Pywalfox + `~/.cache/wal/colors.json` (требуется установка расширения) |
-| **Kitty** | Kitty Terminal | `~/.config/kitty/current-theme.conf` (мониторит изменения через inotify) |
+| **GTK4** | Nautilus, Calculator, pwvucontrol | Material Design variables + `org.gnome.desktop.interface color-scheme` via xdg-desktop-portal-gnome |
+| **GTK3** | Lutris, qalculate-gtk | Custom theme `~/.themes/Noctalia/gtk-3.0/gtk.css` with hardcoded colors |
+| **Firefox/Zen** | Zen Browser, Firefox | Pywalfox + `~/.cache/wal/colors.json` (requires extension installation) |
+| **Kitty** | Kitty Terminal | `~/.config/kitty/current-theme.conf` (monitors changes via inotify) |
 
 ---
 
-## 🎨 Цветовые схемы
+## 🎨 Color Schemes
 
-### Предустановленные схемы
-- **Kanagawa** — тёмная схема, вдохновлённая японской живописью
-- **Catppuccin** — мягкие пастельные тона
-- **Gruvbox** — ретро-тёплая палитра
-- **Solarized** — классическая тёмная/светлая схема
-- **Monochrome** — минималистичная чёрно-белая схема
+### Preset Schemes
+- **Kanagawa** — dark scheme inspired by Japanese paintings
+- **Catppuccin** — soft pastel tones
+- **Gruvbox** — retro warm palette
+- **Solarized** — classic dark/light scheme
+- **Monochrome** — minimalist black and white scheme
 - **Material Design** — Google Material Design
-- **Nord** — холодные арктические тона
-- **Dracula** — тёмная схема с яркими акцентами
+- **Nord** — cold arctic tones
+- **Dracula** — dark scheme with bright accents
 
-### Генерация из обоев
-1. Откройте Noctalia Settings → Color Schemes
-2. Включите "Use Wallpaper Colors"
-3. Выберите обои через Wallpaper Selector
-4. Noctalia автоматически вызовет `matugen` для генерации палитры
-5. Цвета применятся ко всем приложениям через шаблоны
+### Generating from Wallpapers
+1. Open Noctalia Settings → Color Schemes
+2. Enable "Use Wallpaper Colors"
+3. Select wallpaper via Wallpaper Selector
+4. Noctalia will automatically call `matugen` to generate palette
+5. Colors will be applied to all applications via templates
 
 ---
 
-## 🔧 Требования
+## 🔧 Requirements
 
-- **OS**: CachyOS / Arch Linux (или другой Arch-based дистрибутив)
+- **OS**: CachyOS / Arch Linux (or other Arch-based distribution)
 - **Display Server**: Wayland
-- **Compositor**: Niri (будет установлен автоматически)
-- **Shell**: Noctalia Shell (будет установлен из AUR)
+- **Compositor**: Niri (will be installed automatically)
+- **Shell**: Noctalia Shell (will be installed from AUR)
 
-**Опционально**:
-- NVIDIA GPU для установки NVIDIA модуля
-- Pywalfox для темизации Firefox/Zen Browser
+**Optional**:
+- NVIDIA GPU for installing NVIDIA module
+- Pywalfox for theming Firefox/Zen Browser
 
 ---
 
-## 📁 Структура репозитория
+## 📁 Repository Structure
 
 ```
 Quries-Noctalia-Niri/
-├── README.md                       # Этот файл
-├── install.sh                      # Главный установочный скрипт
-├── modules/                        # Модули установки
-│   ├── base.sh                    # Базовая установка (Noctalia + Niri + зависимости)
-│   ├── nvidia.sh                  # NVIDIA Wayland оптимизации
-│   ├── qt-integration.sh          # Qt5/Qt6 интеграция с цветовыми схемами
-│   └── gtk-integration.sh         # GTK3/GTK4 интеграция с цветовыми схемами
-├── config/                         # Конфигурационные файлы
-│   ├── niri/                      # Niri compositor конфигурация
-│   │   └── config.kdl             # Биндинги, воркспейсы, настройки
+├── README.md                       # This file
+├── install.sh                      # Main installation script
+├── modules/                        # Installation modules
+│   ├── base.sh                    # Base installation (Noctalia + Niri + dependencies)
+│   ├── nvidia.sh                  # NVIDIA Wayland optimizations
+│   ├── qt-integration.sh          # Qt5/Qt6 integration with color schemes
+│   └── gtk-integration.sh         # GTK3/GTK4 integration with color schemes
+├── config/                         # Configuration files
+│   ├── niri/                      # Niri compositor configuration
+│   │   └── config.kdl             # Keybindings, workspaces, settings
 │   ├── kitty/                     # Kitty terminal
-│   │   └── kitty.conf             # JetBrains Mono Nerd Font + динамические темы
-│   ├── noctalia/                  # Noctalia настройки
-│   │   ├── settings.json          # Основные настройки
-│   │   └── colors.json            # Активная цветовая схема
-│   ├── qt5ct/                     # Qt5 настройки
+│   │   └── kitty.conf             # JetBrains Mono Nerd Font + dynamic themes
+│   ├── noctalia/                  # Noctalia settings
+│   │   ├── settings.json          # Main settings
+│   │   └── colors.json            # Active color scheme
+│   ├── qt5ct/                     # Qt5 settings
 │   │   ├── qt5ct.conf             # custom_palette=true, icon_theme, fonts
-│   │   └── colors/noctalia.conf   # Автогенерируемая палитра
-│   ├── qt6ct/                     # Qt6 настройки
+│   │   └── colors/noctalia.conf   # Auto-generated palette
+│   ├── qt6ct/                     # Qt6 settings
 │   │   ├── qt6ct.conf             # custom_palette=true, icon_theme, fonts
-│   │   └── colors/noctalia.conf   # Автогенерируемая палитра
-│   ├── gtk-3.0/                   # GTK3 настройки
+│   │   └── colors/noctalia.conf   # Auto-generated palette
+│   ├── gtk-3.0/                   # GTK3 settings
 │   │   ├── settings.ini           # gtk-theme, icon-theme, cursor-theme
-│   │   └── gtk.css                # Автогенерируемые стили
-│   ├── gtk-4.0/                   # GTK4 настройки
+│   │   └── gtk.css                # Auto-generated styles
+│   ├── gtk-4.0/                   # GTK4 settings
 │   │   ├── settings.ini           # gtk-theme, icon-theme, cursor-theme
-│   │   └── gtk.css                # Автогенерируемые стили (Material Design переменные)
-│   └── .face                      # Аватар пользователя
-├── scripts/                        # Вспомогательные скрипты
-│   ├── update_micro_theme.sh      # Синхронизация цветов с micro editor
-│   ├── update_qt_colorscheme.sh   # Ручное обновление Qt цветовой схемы
-│   └── fetch-centered             # Кастомный системный информер
-├── patches/                        # Патчи для Noctalia Shell
+│   │   └── gtk.css                # Auto-generated styles (Material Design variables)
+│   └── .face                      # User avatar
+├── scripts/                        # Helper scripts
+│   ├── update_micro_theme.sh      # Sync colors with micro editor
+│   ├── update_qt_colorscheme.sh   # Manual Qt color scheme update
+│   └── fetch-centered             # Custom system info script
+├── patches/                        # Patches for Noctalia Shell
 │   └── noctalia-shell/
-│       ├── AppThemeService.qml    # Исправленный сервис тем (GTK3 generation + scrim fix)
-│       └── gtk.css                # Универсальный GTK шаблон (GTK3 + GTK4)
-├── qn1.png                         # Скриншот 1
-├── qn2.png                         # Скриншот 2
-└── qn3.png                         # Скриншот 3
+│       ├── AppThemeService.qml    # Fixed theme service (GTK3 generation + scrim fix)
+│       └── gtk.css                # Universal GTK template (GTK3 + GTK4)
+├── qn1.png                         # Screenshot 1
+├── qn2.png                         # Screenshot 2
+└── qn3.png                         # Screenshot 3
 ```
 
 ---
 
-## 🐛 Известные проблемы и решения
+## 🐛 Known Issues and Solutions
 
-### GTK4 приложения не подхватывают изменения цветовых схем
-**Проблема**: GTK4/libadwaita приложения (Nautilus, Calculator) подхватывают новые цвета только после перезапуска.
+### GTK4 apps don't pick up color scheme changes
+**Problem**: GTK4/libadwaita apps (Nautilus, Calculator) only pick up new colors after restart.
 
-**Причина**: `AdwStyleManager` читает `org.gnome.desktop.interface color-scheme` через portal только при инициализации, без подписки на изменения.
+**Cause**: `AdwStyleManager` reads `org.gnome.desktop.interface color-scheme` via portal only on initialization, without subscribing to changes.
 
-**Решение**: Перезапускайте GTK4 приложения после смены цветовой схемы. Nautilus можно перезапустить через биндинг `MOD+E` в Niri (включает `killall nautilus`).
+**Solution**: Restart GTK4 apps after changing color scheme. Nautilus can be restarted via `MOD+E` keybinding in Niri (includes `killall nautilus`).
 
-### Белый квадрат за контекстными меню в Nautilus
-**Проблема**: При открытии контекстного меню (правый клик) появляется белый прямоугольный артефакт.
+### White square behind context menus in Nautilus
+**Problem**: When opening context menu (right click), a large white rectangular artifact appears.
 
-**Причина**: Кастомные CSS правила для `popover, popover.background` ломают backdrop рендеринг GTK4.
+**Cause**: Custom CSS rules for `popover, popover.background` break GTK4 backdrop rendering.
 
-**Решение**: **НЕ ДОБАВЛЯЙТЕ** стили для `popover, popover.background, .context-menu` в `~/.config/gtk-4.0/gtk.css`. Используйте только стили для `menu, .menu` (для GTK3 контекстных меню).
+**Solution**: **DO NOT ADD** styles for `popover, popover.background, .context-menu` in `~/.config/gtk-4.0/gtk.css`. Only use styles for `menu, .menu` (for GTK3 context menus).
 
-### Hook скрипт apply_gtk_css_rules.sh добавляет проблемные стили
-**Решение**: Hook скрипт `apply_gtk_css_rules.sh` **отключен** в `~/.config/noctalia/settings.json`. Если вы видите проблемы с GTK4 меню, удалите старые CSS файлы и переключите цветовую схему для регенерации:
+### Hook script apply_gtk_css_rules.sh adds problematic styles
+**Solution**: Hook script `apply_gtk_css_rules.sh` is **disabled** in `~/.config/noctalia/settings.json`. If you see issues with GTK4 menus, remove old CSS files and switch color scheme for regeneration:
 ```bash
 rm ~/.config/gtk-3.0/gtk.css ~/.config/gtk-4.0/gtk.css
 systemctl --user restart noctalia.service
-# Затем переключите цветовую схему в Noctalia Settings
+# Then switch color scheme in Noctalia Settings
 ```
 
 ---
 
-## 🤝 Благодарности
+## 🤝 Credits
 
-- **[Noctalia Shell](https://github.com/noctalia-dev/noctalia-shell)** — за потрясающий Wayland shell на базе Quickshell/QML
-- **[Niri](https://github.com/YaLTeR/niri)** — за современный тайловый Wayland compositor
-- **[Matugen](https://github.com/InioX/matugen)** — за генерацию Material Design цветовых схем из обоев
-- **[Claude Code](https://claude.ai/claude-code)** — за помощь в написании кода, исправлении багов и создании этого репозитория
+- **[Noctalia Shell](https://github.com/noctalia-dev/noctalia-shell)** — for the amazing Wayland shell based on Quickshell/QML
+- **[Niri](https://github.com/YaLTeR/niri)** — for the modern tiling Wayland compositor
+- **[Matugen](https://github.com/InioX/matugen)** — for generating Material Design color schemes from wallpapers
+- **[Claude Code](https://claude.ai/claude-code)** — for help with writing code, fixing bugs, and creating this repository
 
 ---
 
-## 📄 Лицензия
+## 📄 License
 
-**MIT License** (для моих кастомизаций и скриптов)
+**MIT License** (for my customizations and scripts)
 
-Noctalia Shell, Niri и другие upstream проекты имеют собственные лицензии — см. их репозитории.
+Noctalia Shell, Niri, and other upstream projects have their own licenses — see their repositories.
 
 ---
 
